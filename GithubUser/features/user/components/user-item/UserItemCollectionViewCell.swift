@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserItemCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var loginLabel: UILabel!
     
     override func awakeFromNib() {
@@ -17,9 +19,10 @@ class UserItemCollectionViewCell: UICollectionViewCell {
     
     func configure(user: User) {
         self.loginLabel.text = user.login
+        self.thumbnailImageView.kf.setImage(with: URL(string: user.avatarUrl))
     }
     
     static func cellHeight(containerSize: CGSize) -> CGSize {
-        return CGSize(width: containerSize.width, height: 60)
+        return CGSize(width: containerSize.width, height: 90)
     }
 }
