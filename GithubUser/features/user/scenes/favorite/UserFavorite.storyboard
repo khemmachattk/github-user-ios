@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L7u-ly-Vhb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite-->
+        <scene sceneID="m99-sW-JQ0">
+            <objects>
+                <viewController id="DGc-wO-zlM" customClass="UserFavoriteViewController" customModule="GithubUser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5sQ-3G-K18">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LsU-wI-xKI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorite" id="khE-ky-s3k"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="lhA-XK-CpV" kind="show" id="3ay-X8-TUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnY-z6-iKz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073.913043478261" y="124.55357142857142"/>
+        </scene>
+        <!--UserDetails-->
+        <scene sceneID="CLY-Ya-cgj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserDetails" id="lhA-XK-CpV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VMa-Ax-gDV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGM-gD-wXS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tdb-yp-HZ0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L7u-ly-Vhb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="S2G-vZ-rRr"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yUT-ao-Gc0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DGc-wO-zlM" kind="relationship" relationship="rootViewController" id="idA-QH-5gh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WW7-js-z8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163.768115942029" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+</document>
