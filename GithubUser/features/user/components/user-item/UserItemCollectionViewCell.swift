@@ -14,4 +14,12 @@ class UserItemCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func configure(user: User) {
+        self.loginLabel.text = user.login
+    }
+    
+    static func cellHeight(containerSize: CGSize) -> CGSize {
+        return CGSize(width: containerSize.width, height: 60)
+    }
 }

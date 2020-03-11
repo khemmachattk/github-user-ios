@@ -23,7 +23,7 @@ class UserListSectionController: ListSectionController {
     }
 
     override func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(width: collectionContext!.containerSize.width, height: 55)
+        return UserItemCollectionViewCell.cellHeight(containerSize: collectionContext!.containerSize)
     }
 
     override func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -34,6 +34,9 @@ class UserListSectionController: ListSectionController {
             at: index) as? UserItemCollectionViewCell else {
                 fatalError()
             }
+        
+        cell.configure(user: model)
+        
         return cell
     }
 
