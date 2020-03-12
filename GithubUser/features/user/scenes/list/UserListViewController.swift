@@ -34,9 +34,9 @@ class UserListViewController: UIViewController {
     }
     
     func loadData() {
-        userUseCase.fetchUsers(lastUserId: 0) { (users, error) in
-            self.viewModel.users = users ?? []
-            self.adapter.performUpdates(animated: true, completion: nil)
+        userUseCase.fetchUsers(lastUserId: 0) { [weak self] (users, error) in
+            self?.viewModel.users = users ?? []
+            self?.adapter.performUpdates(animated: true, completion: nil)
         }
     }
 }
@@ -59,7 +59,7 @@ extension UserListViewController {
     }
 }
 
-// MARK: - List Data Srouce
+// MARK: - List Data Source
 extension UserListViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return viewModel.users

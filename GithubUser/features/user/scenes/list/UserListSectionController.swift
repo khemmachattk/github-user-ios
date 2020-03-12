@@ -14,8 +14,8 @@ class UserListSectionController: ListSectionController {
     
     override init() {
         super.init()
-        minimumLineSpacing = 4
-        minimumInteritemSpacing = 4
+        minimumLineSpacing = 0
+        minimumInteritemSpacing = 0
     }
 
     override func numberOfItems() -> Int {
@@ -23,17 +23,17 @@ class UserListSectionController: ListSectionController {
     }
 
     override func sizeForItem(at index: Int) -> CGSize {
-        return UserItemCollectionViewCell.cellHeight(containerSize: collectionContext!.containerSize)
+        return UserItemCollectionViewCell.cellHeight(
+            containerSize: collectionContext!.containerSize,
+            user: model)
     }
 
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = collectionContext?.dequeueReusableCell(
+        let cell = collectionContext?.dequeueReusableCell(
             withNibName: "UserItemCollectionViewCell",
             bundle: nil,
             for: self,
-            at: index) as? UserItemCollectionViewCell else {
-                fatalError()
-            }
+            at: index) as! UserItemCollectionViewCell
         
         cell.configure(user: model)
         
@@ -41,6 +41,6 @@ class UserListSectionController: ListSectionController {
     }
 
     override func didUpdate(to object: Any) {
-        self.model = object as? User
+        model = object as? User
     }
 }

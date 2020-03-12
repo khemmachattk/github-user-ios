@@ -15,6 +15,7 @@ class User: Mappable {
     var id: Int!
     var avatarUrl: String!
     var url: String!
+    var type: String!
     var siteAdmin: Bool!
 
     required init?(map: Map) {}
@@ -24,7 +25,14 @@ class User: Mappable {
         id <- map["id"]
         avatarUrl <- map["avatar_url"]
         url <- map["url"]
+        type <- map["type"]
         siteAdmin <- map["site_admin"]
+    }
+}
+
+extension User {
+    var adminText: String {
+        siteAdmin ? "Admin" : "Not Admin"
     }
 }
 
